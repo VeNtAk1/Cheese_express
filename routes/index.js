@@ -6,19 +6,39 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 router.get('/adugei', function(req, res, next) {
-  res.send("<h1>Адыгейский Сыр</h1>")
+  res.render("cheese", {
+    title: "Адыгейский Сыр",
+    picture: "images/adugei.png",
+    desc: "Традиционный кавказский сыр из коровьего молока, обладает насыщенным вкусом и плотной текстурой."
+  });
 });
 
 router.get('/chedder', function(req, res, next) {
-res.send("<h1>Чедский сыр</h1>")
+  res.render("cheese", {
+    title: "Чедский Сыр",
+    picture: "images/chedder.png",
+    desc: "Английский сыр из коровьего молока, известен своей мягкой текстурой и слегка острым вкусом."
+  });
 });
 router.get('/kandal', function(req, res, next) {
-res.send("<h1>Кандальский сыр</h1>")
+  res.render("cheese", {
+    title: "Канадльский Сыр",
+    picture: "images/kantal.png",
+    desc: "Нежный и мягкий сыр из цельного молока, подходит для салатов и закусок."
+  });
 });
 router.get('/russian', function(req, res, next) {
-res.send("<h1>Русский сыр</h1>")
+  res.render("cheese", {
+    title: "Российский Сыр",
+    picture: "images/russian.png",
+    desc: "Обобщенное название для различных видов сыров, производимых в России, включая мягкие, полутвёрдые и твёрдые сыры."
+  });
 });
 router.get('/tofy', function(req, res, next) {
-res.send("<h1>Тофский сыр</h1>")
+  res.render("cheese", {
+    title: "Тофский Сыр",
+    picture: "images/tofy.png",
+    desc: "Сухой и соленый овечий сыр, традиционно изготавливаемый в Грузии."
+  });
 });
 module.exports = router;
