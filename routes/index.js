@@ -1,5 +1,6 @@
 var express = require('express');
-var router = express.Router();  
+var router = express.Router(); 
+var Cheese = require("../models/cheese").Cheese; 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
