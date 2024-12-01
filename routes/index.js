@@ -4,9 +4,8 @@ var Cheese = require("../models/cheese").Cheese;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  req.session.greeting = "Hi!!!";
-  res.render('index', { title: 'Express' });;
-});
+  res.render('index', { title: 'Express', counter:req.session.counter });
+  });
 router.get('/adugei', function(req, res, next) {
   res.render("cheese", {
     title: "Адыгейский Сыр",
