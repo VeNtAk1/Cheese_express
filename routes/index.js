@@ -4,7 +4,8 @@ var Cheese = require("../models/cheese").Cheese;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.cookie('greeting', 'Hi!!!').render('index', { title: 'Express' });;
+  req.session.greeting = "Hi!!!";
+  res.render('index', { title: 'Express' });;
 });
 router.get('/adugei', function(req, res, next) {
   res.render("cheese", {
