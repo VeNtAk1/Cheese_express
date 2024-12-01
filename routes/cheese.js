@@ -1,5 +1,6 @@
 var express = require("express");
 var Cheese  = require("../models/cheese").Cheese;
+var checkAuth = require("../middlewares/checkAuth.js");
 var router = express.Router();
 
 
@@ -9,7 +10,7 @@ router.get("/", function (req, res, next) {
 });
 
 
-router.get("/:nick", async function (req, res, next) {
+router.get("/:nick", checkAuth, async function (req, res, next) {
   var cheeses = await Cheese.find({ nick: req.params.nick });
   console.log(cheeses);
   if (!cheeses.length) return next(new Error("Нет такого сыра"));
